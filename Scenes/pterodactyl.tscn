@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://tcjb4skbxo5x"]
+
+[ext_resource type="Texture2D" uid="uid://y2vhn6ncn261" path="res://Assets/Sprites/Pterodectyl_01.png" id="1_7u4qs"]
+[ext_resource type="Script" path="res://Scripts/Pterodactyl.cs" id="1_iwqwc"]
+[ext_resource type="Texture2D" uid="uid://e1o13dmc517w" path="res://Assets/Sprites/Pterodactyl_02.png" id="2_v27he"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_avp87"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7u4qs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_v27he")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d8yap"]
+size = Vector2(92, 60)
+
+[node name="Pterodactyl" type="StaticBody2D"]
+collision_layer = 4
+script = ExtResource("1_iwqwc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_avp87")
+autoplay = "default"
+frame_progress = 0.526354
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 14)
+shape = SubResource("RectangleShape2D_d8yap")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]

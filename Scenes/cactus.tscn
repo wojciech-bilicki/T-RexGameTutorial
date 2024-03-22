@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://8ihpadtsmbdy"]
+
+[ext_resource type="Script" path="res://Scripts/Cactus.cs" id="1_w8xg3"]
+[ext_resource type="Texture2D" uid="uid://furnv3x50f14" path="res://Assets/Sprites/Cactus_Large_Double.png" id="2_mnj14"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_twkm8"]
+
+[node name="Cactus" type="StaticBody2D"]
+collision_layer = 4
+script = ExtResource("1_w8xg3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_mnj14")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_twkm8")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]

@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0h8vjtrfluq7"]
+
+[ext_resource type="Script" path="res://Scripts/Main.cs" id="1_nb8da"]
+[ext_resource type="PackedScene" uid="uid://ddof2t55rt2op" path="res://Scenes/ground.tscn" id="2_05dao"]
+[ext_resource type="PackedScene" uid="uid://8tum3pxc78fj" path="res://Scenes/player.tscn" id="3_o8t6x"]
+[ext_resource type="PackedScene" uid="uid://bwchp3mi0h4w3" path="res://Scenes/ui.tscn" id="4_3irhi"]
+
+[node name="main" type="Node"]
+script = ExtResource("1_nb8da")
+
+[node name="Ground" parent="." instance=ExtResource("2_05dao")]
+position = Vector2(1200, 580)
+_speed = -500.0
+
+[node name="Player" parent="." instance=ExtResource("3_o8t6x")]
+position = Vector2(66, 622)
+collision_mask = 6
+_jumpVelocity = -1100.0
+
+[node name="UI" parent="." instance=ExtResource("4_3irhi")]

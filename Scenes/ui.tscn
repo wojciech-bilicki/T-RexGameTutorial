@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwchp3mi0h4w3"]
+
+[ext_resource type="Script" path="res://Scripts/UI.cs" id="1_60sg5"]
+[ext_resource type="FontFile" uid="uid://chlot355udo6u" path="res://Assets/Fonts/Minecraft.ttf" id="1_mwy4o"]
+[ext_resource type="Texture2D" uid="uid://c8hxk8liaq6kp" path="res://Assets/Sprites/Retry.png" id="2_t06m2"]
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_60sg5")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="ScoreLabel" type="Label" parent="MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.321569, 0.321569, 0.321569, 1)
+theme_override_fonts/font = ExtResource("1_mwy4o")
+theme_override_font_sizes/font_size = 32
+text = "00032"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="GameOverContainer" type="VBoxContainer" parent="MarginContainer/CenterContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/CenterContainer/GameOverContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_mwy4o")
+theme_override_font_sizes/font_size = 32
+text = "Game Over"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RestartButton" type="TextureButton" parent="MarginContainer/CenterContainer/GameOverContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+texture_normal = ExtResource("2_t06m2")
+stretch_mode = 5
